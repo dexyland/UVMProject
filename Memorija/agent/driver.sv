@@ -27,24 +27,26 @@ class driver extends uvm_driver #(command_transaction);
     task drive_transaction();
         @(posedge cmd_if.clk);
             
-        if (cmd_if.reset_n === 1 && cmd_if.ready === 1) begin
+        //if (cmd_if.reset_n === 1 && cmd_if.ready === 1) begin
             cmd_if.write_en    <= tr.write_en;
             cmd_if.read_en     <= tr.read_en;
             cmd_if.op          <= tr.op;
             cmd_if.address     <= tr.address;
             cmd_if.write_data  <= tr.write_data;
             //tr.print();
-        end
+        //end
     endtask : drive_transaction
     
     task run_phase(uvm_phase phase);
         init_driver;
         
         forever begin
-            seq_item_port.get_next_item(tr);
-            drive_transaction;
-            seq_item_port.item_done();
-        end
+			if (cmd_if.reset_n === 1 && cmd_if.ready === 1) begin
+                seq_item_port.get_next_item(tr);
+                drive_transaction;
+                seq_item_port.item_done();
+			end
+		end
     endtask : run_phase
 
 endclass : driver
