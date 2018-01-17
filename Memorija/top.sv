@@ -7,10 +7,10 @@ module top;
     bit reset_n; 
     command_if       command_interface();
 
-    mem     dut (.Clk(command_interface.clk), .Reset_n(command_interface.reset_n), 
+    memory      dut (.Clk(command_interface.clk), .Reset_n(command_interface.reset_n), 
                     .Address(command_interface.address), .Rd_Cs(command_interface.read_en), 
                     .Wr_Cs(command_interface.write_en), .op(command_interface.op),
-                    .Ready(command_interface.result), .Wr_Data(command_interface.write_data),
+                    .Ready(command_interface.ready), .Wr_Data(command_interface.write_data),
                     .Rd_Data(command_interface.read_data));
 
     initial begin

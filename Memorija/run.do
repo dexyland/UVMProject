@@ -8,7 +8,7 @@ vlib work
 vcom -f dut.f
 
 vlog -f tb.f
-vopt top -o top_optimized  +acc +cover=sbfec+adder(rtl).
+vopt top -o top_optimized  +acc +cover=sbfec+memory(rtl).
 vsim top_optimized -coverage -classdebug -uvmcontrol=all
 set NoQuitOnFinish 1
 onbreak {resume}

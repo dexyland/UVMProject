@@ -17,18 +17,16 @@ class command_sequence extends uvm_sequence #(command_transaction);
             tx = command_transaction::type_id::create("tx");
 
             start_item(tx);
-            if(!tx.randomize() with {tx.address == 5; tx.op == 0;}) begin
+            if(!tx.randomize() with {tx.address == 5; tx.op == 0; tx.write_en == 1;}) begin
                 `uvm_error(get_full_name(), "Randomization failed")
             end
             
-            if (count == 0) begin
-                tx.write_data = wr_data;
-            end else if (count < 8 ) begin
-                wr_data <= wr_data << 1;
-                tx.write_data = wr_data;
+            if (wr_data < 128 ) begin
+                wr_data = wr_data << 1;
+                tx.write_data = ~wr_data;
             end else begin
-                wr_data <= wr_data >> 1;
-                tx.write_data = wr_data;
+                wr_data = wr_data >> 1;
+                tx.write_data = ~wr_data;
             end;
                 
             

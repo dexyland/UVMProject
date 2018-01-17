@@ -33,7 +33,7 @@ endclass : predictor
 		tr.write_data  <= t.write_data;
 		tr.read_data   <= t.read_data;
 		//tr.print();
-		o_addr.write(tr);
+		o_mem.write(tr);
 	end
  endfunction : write
 //------------------------------------------------------------------------------

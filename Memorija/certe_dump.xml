@@ -1,0 +1,139 @@
+<certe_dump>
+  <instance type=" test "> 
+     uvm_test_top 
+  
+     <instance type=" env "> 
+        env 
+  
+        <instance type=" agent "> 
+           m_agent 
+  
+           <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+              aport 
+              <connection>  uvm_test_top.env.m_predictor.i_operands  </connection> 
+              <connection>  uvm_test_top.env.m_scoreboard.obs_axport  </connection> 
+           </port> 
+  
+           <instance type=" driver "> 
+              m_driver 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 rsp_port 
+              </port> 
+  
+              <port if_type = "uvm_seq_item_pull_port" txn_type = "anonymous"> 
+                 seq_item_port 
+                 <connection>  uvm_test_top.env.m_agent.m_sequencer.seq_item_export  </connection> 
+              </port> 
+           </instance> 
+  
+  
+           <instance type=" monitor "> 
+              m_monitor 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 aport 
+                 <connection>  uvm_test_top.env.m_agent.aport  </connection> 
+              </port> 
+           </instance> 
+  
+  
+           <instance type=" uvm_sequencer "> 
+              m_sequencer 
+  
+              <export if_type = "uvm_analysis_export" txn_type = "anonymous"> 
+                 rsp_export 
+                 <connection>  uvm_test_top.env.m_agent.m_sequencer.sqr_rsp_analysis_fifo.analysis_export  </connection> 
+              </export> 
+  
+              <imp if_type = "uvm_seq_item_pull_imp" txn_type = "anonymous"> 
+                 seq_item_export 
+              </imp> 
+           </instance> 
+  
+        </instance> 
+  
+  
+        <instance type=" predictor "> 
+           m_predictor 
+  
+           <imp if_type = "uvm_analysis_imp" txn_type = "anonymous"> 
+              i_operands 
+           </imp> 
+  
+           <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+              o_mem 
+              <connection>  uvm_test_top.env.m_scoreboard.exp_axport  </connection> 
+           </port> 
+        </instance> 
+  
+  
+        <instance type=" scoreboard #(T) "> 
+           m_scoreboard 
+  
+           <export if_type = "uvm_analysis_export" txn_type = "anonymous"> 
+              exp_axport 
+              <connection>  uvm_test_top.env.m_scoreboard.exp_fifo.analysis_export  </connection> 
+           </export> 
+  
+           <instance type=" uvm_tlm_analysis_fifo #(T) "> 
+              exp_fifo 
+  
+              <imp if_type = "uvm_analysis_imp" txn_type = "anonymous"> 
+                 analysis_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 get_ap 
+              </port> 
+  
+              <imp if_type = "uvm_get_peek_imp" txn_type = "anonymous"> 
+                 get_peek_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 put_ap 
+              </port> 
+  
+              <imp if_type = "uvm_put_imp" txn_type = "anonymous"> 
+                 put_export 
+              </imp> 
+           </instance> 
+  
+  
+           <export if_type = "uvm_analysis_export" txn_type = "anonymous"> 
+              obs_axport 
+              <connection>  uvm_test_top.env.m_scoreboard.obs_fifo.analysis_export  </connection> 
+           </export> 
+  
+           <instance type=" uvm_tlm_analysis_fifo #(T) "> 
+              obs_fifo 
+  
+              <imp if_type = "uvm_analysis_imp" txn_type = "anonymous"> 
+                 analysis_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 get_ap 
+              </port> 
+  
+              <imp if_type = "uvm_get_peek_imp" txn_type = "anonymous"> 
+                 get_peek_export 
+              </imp> 
+  
+              <port if_type = "uvm_analysis_port" txn_type = "anonymous"> 
+                 put_ap 
+              </port> 
+  
+              <imp if_type = "uvm_put_imp" txn_type = "anonymous"> 
+                 put_export 
+              </imp> 
+           </instance> 
+  
+        </instance> 
+  
+     </instance> 
+  
+  </instance> 
+  
+  </certe_dump>
