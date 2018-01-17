@@ -1,4 +1,4 @@
-package adder_pkg;
+package mem_pkg;
 	import uvm_pkg::*;
 	`include "uvm_macros.svh"
 
@@ -12,5 +12,5 @@ package adder_pkg;
 	`include "env.sv"
 	`include "test.sv"
 
-endpackage : adder_pkg
+endpackage : mem_pkg
    

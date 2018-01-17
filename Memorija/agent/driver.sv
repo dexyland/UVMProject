@@ -13,8 +13,8 @@ class driver extends uvm_driver #(command_transaction);
             `uvm_fatal("DRIVER", "Failed to get interface");
         
 /*      if(!uvm_config_db #(int)::get(this, "","delay", delay))
-        `uvm_fatal("DRIVER", "Failed to get delay");
-   endfunction : build_phase*/
+        `uvm_fatal("DRIVER", "Failed to get delay");*/
+    endfunction : build_phase
   
     task init_driver();
         cmd_if.write_en    <= 0;
@@ -27,7 +27,7 @@ class driver extends uvm_driver #(command_transaction);
     task drive_transaction();
         @(posedge cmd_if.clk);
             
-        if (cmd_if.reset_n === 1) begin
+        if (cmd_if.reset_n === 1 && cmd_if.ready === 1) begin
             cmd_if.write_en    <= tr.write_en;
             cmd_if.read_en     <= tr.read_en;
             cmd_if.op          <= tr.op;

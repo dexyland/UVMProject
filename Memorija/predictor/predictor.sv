@@ -23,7 +23,7 @@ endclass : predictor
 // Function/Task implementations
 //******************************************************************************
  function void predictor::write(command_transaction t);
-	if(t.ready == 1) begin
+	if(t.ready === 1) begin
 		//$display("HELLO FROM PREDICTOR");
 		tr.write_en    <= t.write_en;
 		tr.read_en     <= t.read_en;
