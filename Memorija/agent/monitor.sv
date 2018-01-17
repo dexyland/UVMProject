@@ -33,17 +33,16 @@ endclass: monitor
 
 		forever begin
 			tr_in.reset_n = cmd_if.reset_n;
-			//if(tr_in.valid == 1 && tr_in.reset_n == 1) begin
-			if (tr_in.reset_n == 1) begin
-				tr_in.write_en   = cmd_if.write_en;
-				tr_in.read_en    = cmd_if.read_en;
-				tr_in.ready      = cmd_if.ready;
-				tr_in.op         = cmd_if.op;
-				tr_in.address    = cmd_if.address;
-				tr_in.write_data = cmd_if.write_data;
-				tr_in.read_data  = cmd_if.read_data;
+
+			if (tr_in.reset_n === 1) begin
+				tr_in.write_en   <= cmd_if.write_en;
+				tr_in.read_en    <= cmd_if.read_en;
+				tr_in.ready      <= cmd_if.ready;
+				tr_in.op         <= cmd_if.op;
+				tr_in.address    <= cmd_if.address;
+				tr_in.write_data <= cmd_if.write_data;
+				tr_in.read_data  <= cmd_if.read_data;
 				//@(posedge cmd_if.clk);
-				//tr_in.result_queue.push_back(cmd_if.result);
 				//tr_in.print();
 				aport.write(tr_in);
 			end else
