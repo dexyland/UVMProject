@@ -27,8 +27,6 @@ module top;
     end
 
     initial begin
-        reset_n = 1'b1;  // comment
-        #10;
         reset_n = 1'b0;
         #40;
         reset_n = 1'b1;  // comment

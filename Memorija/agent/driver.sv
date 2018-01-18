@@ -25,30 +25,41 @@ class driver extends uvm_driver #(command_transaction);
     endtask : init_driver
  
     task drive_transaction();
-        @(posedge cmd_if.clk);
             
-        //if (cmd_if.reset_n == 1) begin
-            cmd_if.write_en    <= tr.write_en;
-            cmd_if.read_en     <= tr.read_en;
-            cmd_if.op          <= tr.op;
-            cmd_if.address     <= tr.address;
-            cmd_if.write_data  <= tr.write_data;
-            tr.print();
-        //end
+        cmd_if.write_en    <= tr.write_en;
+        cmd_if.read_en     <= tr.read_en;
+        cmd_if.op          <= tr.op;
+        cmd_if.address     <= tr.address;
+        cmd_if.write_data  <= tr.write_data;
+        tr.print();
+		
     endtask : drive_transaction
     
     task run_phase(uvm_phase phase);
-        init_driver;
+		init_driver;
         
-        forever begin
-            seq_item_port.get_next_item(tr);
-			
-			if (cmd_if.reset_n == 1) begin
-                drive_transaction;
-				$display("DRIVER SEQ DONE");
+		forever begin
+			if (cmd_if.reset_n == 0 || cmd_if.ready == 0) begin
+				@(posedge cmd_if.clk);
+			end else begin
+				seq_item_port.get_next_item(tr);
+				
+				cmd_if.address     <= tr.address;
+				cmd_if.op          <= tr.op;
+				cmd_if.read_en   <= tr.read_en;
+				cmd_if.write_en  <= tr.write_en;
+				
+				if (tr.write_en == 1) begin
+					cmd_if.write_data <= tr.write_data;	
+				end
+				
+				/*drive_transaction;
+				$display("DRIVER SEQ DONE");*/
+				tr.print();
+				
+				seq_item_port.item_done();
 			end
-			
-			seq_item_port.item_done();
+			@(posedge cmd_if.clk);
 		end
     endtask : run_phase
 

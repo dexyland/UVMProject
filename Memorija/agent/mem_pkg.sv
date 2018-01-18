@@ -3,7 +3,7 @@ package mem_pkg;
 	`include "uvm_macros.svh"
 
 	`include "command_transaction.sv"
-	`include "command_sequence.sv"   
+	`include "command_sequence.sv"
 	`include "driver.sv"
 	`include "monitor.sv"
 	`include "../scoreboard/scoreboard.sv"

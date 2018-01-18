@@ -23,6 +23,10 @@ class test extends uvm_test;
         seq.start(m_env.m_agent.m_sequencer);
 
         #2us;
+		
+		/*seq1 = command_sequence1::type_id::create("seq1");
+		
+		seq.start(m_env.m_agent.m_sequencer);*/
         phase.drop_objection(this);
   endtask: run_phase
 
