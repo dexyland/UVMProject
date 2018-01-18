@@ -27,13 +27,13 @@ class driver extends uvm_driver #(command_transaction);
     task drive_transaction();
         @(posedge cmd_if.clk);
             
-        //if (cmd_if.reset_n === 1 && cmd_if.ready === 1) begin
+        //if (cmd_if.reset_n == 1) begin
             cmd_if.write_en    <= tr.write_en;
             cmd_if.read_en     <= tr.read_en;
             cmd_if.op          <= tr.op;
             cmd_if.address     <= tr.address;
             cmd_if.write_data  <= tr.write_data;
-            //tr.print();
+            tr.print();
         //end
     endtask : drive_transaction
     
@@ -41,11 +41,14 @@ class driver extends uvm_driver #(command_transaction);
         init_driver;
         
         forever begin
-			if (cmd_if.reset_n === 1 && cmd_if.ready === 1) begin
-                seq_item_port.get_next_item(tr);
+            seq_item_port.get_next_item(tr);
+			
+			if (cmd_if.reset_n == 1) begin
                 drive_transaction;
-                seq_item_port.item_done();
+				$display("DRIVER SEQ DONE");
 			end
+			
+			seq_item_port.item_done();
 		end
     endtask : run_phase
 

@@ -32,10 +32,9 @@ endclass: monitor
         tr_in = command_transaction::type_id::create("tr_in");
 
         forever begin
-            tr_in.reset_n = cmd_if.reset_n;
             tr_in.ready   = cmd_if.ready;
 
-            if (tr_in.reset_n === 1 && tr_in.ready === 1) begin
+            if (cmd_if.reset_n == 1) begin
                 tr_in.write_en   = cmd_if.write_en;
                 tr_in.read_en    = cmd_if.read_en;
                 tr_in.op         = cmd_if.op;

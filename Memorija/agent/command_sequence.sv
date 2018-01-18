@@ -7,30 +7,29 @@ class command_sequence extends uvm_sequence #(command_transaction);
 
     // A variable that specifies the number of transactions to
     // generate in the sequence
-    int count = 16;
-    int wr_data = 1;
+    int count = 8;
+    byte wr_data = 1;
+	int data_set = 0;
 
     task body;
         command_transaction tx;
         repeat(count)
         begin
             tx = command_transaction::type_id::create("tx");
-
+			
             start_item(tx);
-            if(!tx.randomize() with {tx.address == 5; tx.op == 0; tx.write_en == 1;}) begin
+			
+            if(!tx.randomize() with {address == 5; op == 0; write_en == 1;}) begin
                 `uvm_error(get_full_name(), "Randomization failed")
             end
-
-            if (wr_data < 128 ) begin
-                tx.write_data = ~wr_data;
-				wr_data = wr_data << 1;
-            end else begin
-                tx.write_data = ~wr_data;
-				wr_data = wr_data >> 1;
-            end;
-
+			
+			tx.write_data = wr_data;
+			wr_data = wr_data << 1;
+			
+			$display("EEE %b", wr_data);
+			
             tx.print();
-          finish_item(tx);
+            finish_item(tx);
         end
          
         /* start_item(tx);
