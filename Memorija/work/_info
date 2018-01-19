@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/materija/RA94-2013/projekat/UVMProject/Memorija
 Ycommand_if
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1516292482
+Z2 !s110 1516376322
 !i10b 1
 !s100 iPLY@jRm2gT=g6@8NM@oR1
 I<okH0<Uj7Qb_]0Kl<>zDX2
@@ -18,7 +18,7 @@ Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 command_if_sv_unit
 S1
 R0
-Z4 w1516277414
+Z4 w1516364167
 8agent/command_if.sv
 Fagent/command_if.sv
 L0 1
@@ -26,8 +26,8 @@ Z5 OL;L;10.5;63
 r1
 !s85 0
 31
-Z6 !s108 1516292482.000000
-Z7 !s107 test.sv|env.sv|agent\agent.sv|agent\..\predictor\predictor.sv|agent\..\scoreboard\scoreboard.sv|agent\monitor.sv|agent\driver.sv|agent\command_sequence.sv|agent\command_transaction.sv|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|top.sv|agent/command_if.sv|agent/mem_pkg.sv|
+Z6 !s108 1516376322.000000
+Z7 !s107 test2.sv|test1.sv|test.sv|env.sv|agent\agent.sv|agent\..\predictor\predictor.sv|agent\..\scoreboard\scoreboard.sv|agent\monitor.sv|agent\driver.sv|agent\command_sequence2.sv|agent\command_sequence1.sv|agent\command_sequence.sv|agent\command_transaction.sv|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|C:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|top.sv|agent/command_if.sv|agent/mem_pkg.sv|
 Z8 !s90 -reportprogress|300|-f|tb.f|
 !i113 0
 Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
@@ -38,12 +38,12 @@ R1
 Z11 DXx6 mtiUvm 7 uvm_pkg 0 22 oMKUklN?>LE6@MJe7=2><1
 R2
 !i10b 1
-!s100 Hc^Q@A64RhYg?HBl]A:Io0
-IeoPQUDWRHhLU_0fZ>7PZJ0
-VeoPQUDWRHhLU_0fZ>7PZJ0
+!s100 ;?_I[Wi36MLNKba5;`Nko1
+IV3Uk_o0eZ;[OAbBHR4?aW1
+VV3Uk_o0eZ;[OAbBHR4?aW1
 S1
 R0
-w1516292447
+w1516376318
 8agent/mem_pkg.sv
 Fagent/mem_pkg.sv
 Z12 FC:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
@@ -60,6 +60,8 @@ Z22 FC:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_def
 Z23 FC:/questasim64_10.5/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
 Fagent\command_transaction.sv
 Fagent\command_sequence.sv
+Fagent\command_sequence1.sv
+Fagent\command_sequence2.sv
 Fagent\driver.sv
 Fagent\monitor.sv
 Fagent\..\scoreboard\scoreboard.sv
@@ -67,6 +69,8 @@ Fagent\..\predictor\predictor.sv
 Fagent\agent.sv
 Fenv.sv
 Ftest.sv
+Ftest1.sv
+Ftest2.sv
 L0 1
 R5
 r1
@@ -120,16 +124,16 @@ R32
 vtop
 R1
 R11
-DXx4 work 7 mem_pkg 0 22 eoPQUDWRHhLU_0fZ>7PZJ0
+DXx4 work 7 mem_pkg 0 22 V3Uk_o0eZ;[OAbBHR4?aW1
 R2
 !i10b 1
-!s100 =<echdAEWA7g59>e0Il391
-I<jF17Y72hS5PhgUao^c[U2
+!s100 =0^N<b`6D?Y2bMG>QkLQa3
+I^Ihh?GE8Cb:`I9N;ki_;j1
 R3
 !s105 top_sv_unit
 S1
 R0
-w1516286758
+w1516376119
 8top.sv
 Ftop.sv
 R12
@@ -156,8 +160,8 @@ R8
 R9
 R10
 Ttop_optimized
-R2
-V2SoNIWX0:VZDokOFF0XU72
+!s110 1516376323
+V52BJA::6>lI<M4ZOnDkdF3
 04 3 4 work top fast 0
 o+acc +cover=sbfec+memory(rtl).
 R10
